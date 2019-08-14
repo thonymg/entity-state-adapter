@@ -1,6 +1,6 @@
 # Entity-state-adapter
 
-Entity State adapter for managing record collections (based on [@ngrx/entity](https://github.com/ngrx/platform))
+Entity State adapter for managing record collections (based on [@ngrx/entity](https://github.com/ngrx/platform)work with `redux` and `useReducer` hooks
 
 `Entity-state-adapter` provides an API to manipulate and query entity collections.
 
@@ -43,6 +43,18 @@ The entity adapter also provides methods for operations against an entity. These
 -   `upsertOne`: Add or Update one entity in the collection
 -   `upsertMany`: Add or Update multiple entities in the collection
 -   `map`: Update multiple entities in the collection by defining a map function, similar to Array.map
+
+The `initialState` is _always required_ and must be create with `adapter.getInitialState({otherState: optional})`
+
+```javascript
+export const userInitialState = adapter.getInitialState({});
+
+const [users, dispatch] = useReducer(
+    userReducer,
+    userInitialState,
+    state => state
+);
+```
 
 On the reducer
 
