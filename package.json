@@ -1,0 +1,29 @@
+{
+    "name": "entity-state-adapter",
+    "version": "0.0.1",
+    "description": "@ngrx/entity for React",
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "typings": "types/index.d.ts",
+    "repository": "",
+    "author": "Anthony Michel (@thonymg)",
+    "license": "MIT",
+    "scripts": {
+        "build": "rollup -c rollup.config.js",
+        "test": "jest"
+    },
+    "lint-staged": {
+        "src/**/*.{js,ts,tsx}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "conventional-changelog-cli": "~2.0.12",
+        "prettier": "~1.17.0",
+        "rollup": "~1.10.1",
+        "rollup-plugin-typescript2": "~0.21.0",
+        "ts-jest": "~24.0.2",
+        "typescript": "~3.3.3"
+    }
+}

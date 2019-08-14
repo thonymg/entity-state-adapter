@@ -1,0 +1,7 @@
+/src
+.*
+*.json
+*.md
+yarn.lock
+*.config.js
+/example
