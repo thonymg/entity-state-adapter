@@ -1,12 +1,12 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "compilerOptions": {
+        "target": "es5",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
 
-    "declaration": true,
-    "declarationDir": "types"
-  },
-  "exclude": ["node_modules"],
-  "include": ["src", "types/models.ts"]
+        "declaration": true,
+        "declarationDir": "types"
+    },
+    "exclude": ["node_modules"],
+    "include": ["src", "types/models.ts"]
 }

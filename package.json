@@ -5,18 +5,11 @@
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "typings": "types/index.d.ts",
-    "repository": "",
-    "author": "Anthony Michel (@thonymg)",
+    "repository": "git@github.com:thonymg/entity-state-adapter.git",
+    "author": "Anthony Michel (@thonymg - copycates@gmail.com)",
     "license": "MIT",
     "scripts": {
-        "build": "rollup -c rollup.config.js",
-        "test": "jest"
-    },
-    "lint-staged": {
-        "src/**/*.{js,ts,tsx}": [
-            "prettier --write",
-            "git add"
-        ]
+        "build": "rollup -c rollup.config.js"
     },
     "devDependencies": {
         "conventional-changelog-cli": "~2.0.12",

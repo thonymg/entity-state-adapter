@@ -1,20 +1,20 @@
-import { EntityState } from '../types/models';
+import { EntityState } from "../types/models";
 
 export function getInitialEntityState<V>(): EntityState<V> {
-  return {
-    ids: [],
-    entities: {},
-  };
+    return {
+        ids: [],
+        entities: {}
+    };
 }
 
 export function createInitialStateFactory<V>() {
-  function getInitialState(): EntityState<V>;
-  function getInitialState<S extends object>(
-    additionalState: S
-  ): EntityState<V> & S;
-  function getInitialState(additionalState: any = {}): any {
-    return Object.assign(getInitialEntityState(), additionalState);
-  }
+    function getInitialState(): EntityState<V>;
+    function getInitialState<S extends object>(
+        additionalState: S
+    ): EntityState<V> & S;
+    function getInitialState(additionalState: any = {}): any {
+        return Object.assign(getInitialEntityState(), additionalState);
+    }
 
-  return { getInitialState };
+    return { getInitialState };
 }

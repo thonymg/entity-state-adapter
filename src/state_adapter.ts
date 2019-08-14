@@ -1,36 +1,36 @@
-import { EntityState } from '../types/models';
+import { EntityState } from "../types/models";
 
 export enum DidMutate {
-  EntitiesOnly,
-  Both,
-  None,
+    EntitiesOnly,
+    Both,
+    None
 }
 
 export function createStateOperator<V, R>(
-  mutator: (arg: R, state: EntityState<V>) => DidMutate
+    mutator: (arg: R, state: EntityState<V>) => DidMutate
 ): EntityState<V>;
 export function createStateOperator<V, R>(
-  mutator: (arg: any, state: any) => DidMutate
+    mutator: (arg: any, state: any) => DidMutate
 ): any {
-  return function operation<S extends EntityState<V>>(arg: R, state: any): S {
-    const clonedEntityState: EntityState<V> = {
-      ids: [...state.ids],
-      entities: { ...state.entities },
+    return function operation<S extends EntityState<V>>(arg: R, state: any): S {
+        const clonedEntityState: EntityState<V> = {
+            ids: [...state.ids],
+            entities: { ...state.entities }
+        };
+
+        const didMutate = mutator(arg, clonedEntityState);
+
+        if (didMutate === DidMutate.Both) {
+            return Object.assign({}, state, clonedEntityState);
+        }
+
+        if (didMutate === DidMutate.EntitiesOnly) {
+            return {
+                ...state,
+                entities: clonedEntityState.entities
+            };
+        }
+
+        return state;
     };
-
-    const didMutate = mutator(arg, clonedEntityState);
-
-    if (didMutate === DidMutate.Both) {
-      return Object.assign({}, state, clonedEntityState);
-    }
-
-    if (didMutate === DidMutate.EntitiesOnly) {
-      return {
-        ...state,
-        entities: clonedEntityState.entities,
-      };
-    }
-
-    return state;
-  };
 }
