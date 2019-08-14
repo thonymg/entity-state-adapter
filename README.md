@@ -8,11 +8,25 @@ Reduces boilerplate for creating reducers that manage a collection of models.
 Provides performant CRUD operations for managing entity collections.
 Extensible adapters for selecting entity information.
 
-### usage
+## usage
 
-in your reducer file
+### Installation
+
+```bash
+npm i entity-state-adapter
+```
+
+or
+
+```bash
+yarn add entity-state-adapter
+```
+
+The initialisation
 
 ```javascript
+import { createEntityAdapter } from "entity-state-adapter";
+
 export function selectUserId(a) {
     //In this case this would be optional since primary key is id
     return a.id;
@@ -28,7 +42,7 @@ export const adapter = createEntityAdapter({
 });
 ```
 
-### Adapter Collection Methods
+## Adapter Collection Methods
 
 The entity adapter also provides methods for operations against an entity. These methods can change one to many records at a time. Each method returns the newly modified state if changes were made and the same state if no changes were made.
 
@@ -56,7 +70,7 @@ const [users, dispatch] = useReducer(
 );
 ```
 
-On the reducer
+And the reducer
 
 ```javascript
 export function userReducer(state, action) {

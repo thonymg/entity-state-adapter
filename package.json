@@ -1,7 +1,7 @@
 {
     "name": "entity-state-adapter",
-    "version": "0.1.1",
-    "description": "@ngrx/entity for React",
+    "version": "0.1.3",
+    "description": "reactjs implementation of entity state adapter",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "typings": "types/index.d.ts",
