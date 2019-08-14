@@ -89,4 +89,4 @@ export function userReducer(state, action) {
 
 ---
 
-Paix et Guerisons - with <3 [Thony](https://github.com/thonymg)
+Paix et Guerisons - with 💘 [Thony](https://github.com/thonymg)
